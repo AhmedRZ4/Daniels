@@ -1,0 +1,273 @@
+:root {
+    --main-color: #343434;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    a {
+        text-decoration: none;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", serif;
+}
+
+.main-color {
+    color: var(--main-color) !important;
+}
+
+.bg-main-color {
+    background-color: var(--main-color) !important;
+}
+
+.bold-800 {
+    font-weight: 800;
+}
+
+#navbar {
+    transition: all 1s;
+}
+
+#navbar.default {
+    position: static;
+    background-color: transparent;
+
+    a {
+        color: white;
+    }
+
+    [class="nav-item"] a.active::after {
+        background-color: white;
+    }
+}
+
+#navbar.onscroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+
+    a {
+        color: black;
+    }
+
+    [class="nav-item"] a.active::after {
+        background-color: black;
+    }
+}
+@media screen and (min-width:767px) {
+    #navbar li a.active {
+        position: relative;
+    }
+    #navbar li a::after{
+        content: "";
+        position: absolute;
+        height: 1px;
+        top: 0;
+        left: 0;
+        background-color: white;
+        width: 0;
+        transition: width 0.3s ease;
+     }
+    #navbar [class="nav-item"] a.active::after {
+        content: "";
+        position: absolute;
+        height: 1.5px;
+        top: 80%;
+        left: 0;
+        width: 100%;
+    }
+}
+
+#Home {
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, .55);
+    background-blend-mode: overlay;
+}
+
+#About .about-img {
+    position: relative;
+}
+
+#About .about-img::after {
+    content: "";
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    left: 0px;
+    bottom: -30px;
+    background-image: url(../img/dots.png);
+    background-repeat: repeat;
+    z-index: -1;
+}
+
+#About a,
+.service-card span,
+#Contact .hover,
+#Works i,
+#Team a>div {
+    transition: all .5s;
+}
+
+.hover:hover,
+.service-card:hover span,
+.inner:hover div {
+    background-color: black !important;
+    color: white !important;
+}
+
+.hover-revarse:hover {
+    background-color: white !important;
+    color: var(--main-color) !important;
+}
+
+.headline.background-img-text h3 {
+    position: relative;
+    font-weight: 900;
+    display: inline-block;
+    z-index: 2;
+}
+
+.headline.background-img-text h3::after {
+    content: "";
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    background-image: url(../img/dots.png);
+    background-repeat: repeat;
+    z-index: -1;
+}
+
+#Works figure figcaption {
+    top: 20px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: 2;
+    transform: translateY(10px);
+
+    div {
+        padding: 3rem;
+        transition: all .5s;
+    }
+}
+
+#Works figure:hover figcaption {
+    top: 0px;
+    bottom: 15px;
+    opacity: 1;
+
+    div {
+        padding: 1rem;
+    }
+}
+
+.carousel-indicators .btn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #869791 !important;
+}
+
+.carousel-indicators .btn:active {
+    color: transparent;
+}
+
+.carousel-indicators .btn:hover {
+    background-color: #85a999 !important;
+}
+
+.nav-underline .nav-item .btn {
+    position: relative;
+    transition: color 0.3s ease; 
+}
+
+.nav-underline .nav-item .btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 0%;
+    height: 2px; 
+    background-color: #000000;
+    border-radius: 2px; 
+    transition: all 0.3s ease; 
+}
+.nav-underline .nav-item .btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: #000000; 
+    border-radius: 2px;
+}
+.tab-pane .trans{
+    transform:  scale(.8);
+    transition: transform 0.5s ease;
+}
+.tab-pane.show .trans{
+    transform:scale(1);
+}
+
+#Team figure figcaption {
+    top: 20px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    transition: all 0.5s;
+    z-index: 2;
+    transform: rotateY(180deg) scale(0.5, 0.5);
+}
+
+#Team .card:hover figcaption {
+    top: 5px;
+    bottom: 5px;
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+#Team img {
+    transition: all .5s;
+}
+
+#Team figure:hover img {
+    transform: scale(1.2);
+}
