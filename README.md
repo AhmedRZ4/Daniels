@@ -1,2 +1,2 @@
 # Daniels
-[Route Exam-1](https://ahmedrz4.github.io/Daniels/)
+[Daniels](https://ahmedrz4.github.io/Daniels/)
